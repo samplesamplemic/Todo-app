@@ -23,7 +23,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-.theme-dark .new-todo, .theme-dark .list, .theme-dark .options {
+.theme-dark .new-todo, .theme-dark #drag, .theme-dark .options, .theme-dark .media {
   background: hsl(235deg, 24%, 19%);
 }
 .theme-dark input, .theme-dark button:hover {
@@ -49,7 +49,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-.theme-light .new-todo, .theme-light .list, .theme-light .options {
+.theme-light .new-todo, .theme-light #drag, .theme-light .options, .theme-light .media {
   background: hsl(236deg, 33%, 92%);
 }
 .theme-light button, .theme-light #count:hover {
@@ -153,7 +153,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-body .new-todo, body .list, body .options {
+body .new-todo, body #drag, body .options, body .media {
   background: hsl(236deg, 33%, 92%);
 }
 body button, body #count:hover {
@@ -199,11 +199,11 @@ body .item {
   display: none;
   padding-inline: 0.7rem;
 }
-.options #clear {
+.options .clear.desktop {
   flex-grow: 2;
   text-align: right;
 }
-.options #count {
+.options .count.desktop {
   flex-grow: 2;
   text-align: left;
   cursor: default;
@@ -226,6 +226,51 @@ body .item {
   float: right;
   margin-top: 0.3rem;
   cursor: default;
+}
+
+.media {
+  display: none;
+}
+
+@media screen and (max-width: 476px) {
+  .container, .main {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+  }
+  .container .new-todo, .container .options, .main .new-todo, .main .options {
+    border-radius: 0.3rem;
+  }
+  .container .new-todo, .main .new-todo {
+    margin: 0;
+  }
+  .container #drag, .main #drag {
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+  }
+  .container .media, .main .media {
+    display: flex;
+    justify-content: space-between;
+    border-bottom-left-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+    padding-inline: 0.7rem;
+  }
+
+  .theme-dark {
+    background-image: url("../images/bg-mobile-dark.jpg");
+  }
+
+  .theme-light {
+    background-image: url("../images/bg-mobile-light.jpg");
+  }
+
+  .options {
+    margin-top: 1.5rem;
+    gap: 1.5rem;
+  }
+  .options .count.desktop, .options .clear.desktop {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

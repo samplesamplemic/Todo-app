@@ -72,11 +72,11 @@ body{
     display: none;
     padding-inline: .7rem;
    // gap: 1rem;
-    #clear {
+    .clear.desktop {
         flex-grow: 2;
         text-align: right;
      }
-     #count{
+     .count.desktop{
         flex-grow: 2;
         text-align: left;
         cursor: default;
@@ -101,3 +101,49 @@ body{
     margin-top: .3rem;
     cursor: default;
 }
+
+
+.media{
+    display: none;
+}
+
+@media screen and (max-width:476px) {
+    .container, .main {
+        width: 80%;
+        @include flex-column;
+       // gap: 1.5rem;
+
+        .new-todo, .options {
+            border-radius: $bradius-mobile;
+        }
+        .new-todo {
+            margin: 0;
+        }
+        #drag{
+            border-top-left-radius: $bradius-mobile;
+            border-top-right-radius: $bradius-mobile;
+        }
+        .media{
+            display: flex;
+            justify-content: space-between;
+            border-bottom-left-radius: $bradius-mobile;
+            border-bottom-right-radius: $bradius-mobile;
+            padding-inline: .7rem;
+        }
+     }
+     .theme-dark{
+        background-image: url($bg-dark-img-mobile);
+     }
+     .theme-light{
+        background-image: url($bg-light-img-mobile);
+     }
+
+    .options{ 
+       margin-top: 1.5rem;
+       gap: 1.5rem;
+    .count.desktop, .clear.desktop {
+        display: none;
+    }
+  }
+}
+

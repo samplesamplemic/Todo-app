@@ -3,10 +3,11 @@ const addItem = document.querySelector("#add-item");
 const appendi = document.querySelector(".list");
 const btnAdd = document.querySelector("#new-todo");
 const option = document.querySelector(".options");
-const itemsTodo = document.querySelector("#count span");
+const itemsTodo = document.querySelectorAll(".count span");
 const checked = document.querySelectorAll(".todo-check");
 const drag = document.getElementById("drag");
 const dragdesc = document.getElementById("drag-desc");
+
 
 
 //switch theme
@@ -47,12 +48,14 @@ function addNewItem(text) {
   addItem.value = null;
   addItem.placeholder = "Create a new todo";
   dragdesc.style.display = "block";
+  
   //callback function
   rem();
   count(1);
   active();
   completed();
   all();
+  
 }
 
 //add new item on click btn <ADD>
@@ -75,17 +78,20 @@ function rem() {
 
 //calculate number of todo-items
 function count(n) {
-  itemsTodo.innerHTML = +itemsTodo.innerHTML + n;
-}
+  //itemsTodo.innerHTML = +itemsTodo.innerHTML + n;
+  itemsTodo.forEach(a => {
+    a.innerHTML = +a.innerHTML + n;  //loop to include the two button 
+  })
+};
 
 //delete checked todo-items
-document.querySelector("#clear").addEventListener("click", () => {
+document.querySelectorAll(".clear").forEach(n =>n.addEventListener("click", () => {  //loop to include the two button 
   document
     .querySelectorAll('.list input[type="checkbox"]:checked')
     .forEach((item) => {
       removeItem(item.closest("div.list"));
     });
-});
+}));
 
 //display all list items
 function active() {
@@ -133,3 +139,5 @@ new Sortable(drag, {
   animation: 150,
   ghostClass: "blue-background-class",
 });
+
+

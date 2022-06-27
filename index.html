@@ -47,7 +47,7 @@
           />
         </div>
         <div id="drag">
-          <div class="list flex-row">
+          <div class="list flex-row">  <!-- dummy-item -->
             <!-- <div class="item">
             <label for="" class="flex-row">
               <input type="checkbox" name="todo-item" class="todo-check" />
@@ -59,9 +59,18 @@
           </div>
           <span class="remove"></span> -->
           </div>
+          
         </div>
-        <div class="options flex-row">
-          <button id="count"><span></span> items in progress</button>
+        
+        <!-- media options -->
+        <div class=" flex-row media">
+          <button class="count mobile"><span></span> items in progress</button>
+          <button class="clear mobile">Clear completed</button>
+        </div>
+        
+
+        <div class="options flex-row desktop">
+          <button class="count desktop"><span></span> items in progress</button>
 
           <button id="all">All</button>
 
@@ -69,7 +78,7 @@
 
           <button id="completed">Completed</button>
 
-          <button id="clear">Clear completed</button>
+          <button class="clear desktop">Clear completed</button>
         </div>
         <span id="drag-desc">Drag and drop your Todos however you like.</span>
       </div>

@@ -23,7 +23,7 @@
     background-color: $dark;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    .new-todo, .list, .options{
+    .new-todo, #drag, .options, .media{
         background: $dark2;
     } 
     input, button:hover{
@@ -49,7 +49,7 @@
     background-color: $light;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    .new-todo, .list, .options{
+    .new-todo, #drag, .options, .media{
         background: $light2;
     }
      button, #count:hover{
@@ -58,7 +58,7 @@
     input, button:hover {
         color: $dark;
     }
-    .todo-check {
+    .todo-check{
         background: $light;
     }
     .item{
