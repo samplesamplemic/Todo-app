@@ -22,6 +22,7 @@
     background-size: 100%;
     background-color: $dark;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     .new-todo, .list, .options{
         background: $dark2;
     } 
@@ -47,6 +48,7 @@
     background-size: 100%;
     background-color: $light;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     .new-todo, .list, .options{
         background: $light2;
     }
