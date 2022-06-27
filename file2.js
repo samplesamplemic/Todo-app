@@ -6,6 +6,8 @@ const option = document.querySelector(".options");
 const itemsTodo = document.querySelector("#count span");
 const checked = document.querySelectorAll(".todo-check");
 const drag = document.getElementById("drag");
+const dragdesc = document.getElementById("drag-desc");
+
 
 //switch theme
 theme.addEventListener("click", () => {
@@ -44,7 +46,7 @@ function addNewItem(text) {
   option.style.display = "flex";
   addItem.value = null;
   addItem.placeholder = "Create a new todo";
-
+  dragdesc.style.display = "block";
   //callback function
   rem();
   count(1);

@@ -28,7 +28,7 @@
 .theme-dark input, .theme-dark button:hover {
   color: white;
 }
-.theme-dark button {
+.theme-dark button, .theme-dark #count:hover {
   color: #c1bfbf;
 }
 .theme-dark .todo-check {
@@ -36,6 +36,9 @@
 }
 .theme-dark .item {
   border-bottom: 1px solid white;
+}
+.theme-dark #drag-desc {
+  color: #c1bfbf;
 }
 
 .theme-light {
@@ -47,7 +50,7 @@
 .theme-light .new-todo, .theme-light .list, .theme-light .options {
   background: hsl(236deg, 33%, 92%);
 }
-.theme-light button {
+.theme-light button, .theme-light #count:hover {
   color: #525252;
 }
 .theme-light input, .theme-light button:hover {
@@ -150,7 +153,7 @@ body {
 body .new-todo, body .list, body .options {
   background: hsl(236deg, 33%, 92%);
 }
-body button {
+body button, body #count:hover {
   color: #525252;
 }
 body input, body button:hover {
@@ -200,6 +203,7 @@ body .item {
 .options #count {
   flex-grow: 2;
   text-align: left;
+  cursor: default;
 }
 
 .remove {
@@ -211,6 +215,14 @@ body .item {
   position: relative;
   top: 5px;
   right: -7px;
+}
+
+#drag-desc {
+  display: none;
+  font-size: 10px;
+  float: right;
+  margin-top: 0.3rem;
+  cursor: default;
 }
 
 /*# sourceMappingURL=style.css.map */

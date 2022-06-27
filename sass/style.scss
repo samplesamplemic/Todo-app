@@ -79,6 +79,7 @@ body{
      #count{
         flex-grow: 2;
         text-align: left;
+        cursor: default;
      }
 }
 
@@ -91,4 +92,12 @@ body{
         top: 5px;
         right: -7px;
     }
+}
+
+#drag-desc{
+    display: none;
+    font-size:10px;
+    float:right;
+    margin-top: .3rem;
+    cursor: default;
 }

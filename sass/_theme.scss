@@ -28,7 +28,7 @@
     input, button:hover{
         color: $white;
     }
-    button {
+    button, #count:hover {
         color:#c1bfbf;
     }
     .todo-check {
@@ -36,6 +36,9 @@
     }
     .item {
        border-bottom: 1px solid white;
+    }
+    #drag-desc {
+        color: #c1bfbf;
     }
 }
 
@@ -47,7 +50,7 @@
     .new-todo, .list, .options{
         background: $light2;
     }
-     button{
+     button, #count:hover{
         color: #525252;
     }
     input, button:hover {
