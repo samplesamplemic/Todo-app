@@ -1,0 +1,216 @@
+@charset "UTF-8";
+.theme-switch #theme {
+  display: none;
+}
+
+.theme-switch #theme + label::before {
+  content: " ";
+  background: url("../images/icon-moon.svg");
+  display: block;
+  width: 25px;
+  height: 26px;
+  cursor: pointer;
+}
+
+.theme-switch #theme:checked + label::before {
+  background: url("../images/icon-sun.svg");
+}
+
+.theme-dark {
+  background: url("../images/bg-desktop-dark.jpg");
+  background-size: 100%;
+  background-color: hsl(235deg, 21%, 11%);
+  background-repeat: no-repeat;
+}
+.theme-dark .new-todo, .theme-dark .list, .theme-dark .options {
+  background: hsl(235deg, 24%, 19%);
+}
+.theme-dark input, .theme-dark button:hover {
+  color: white;
+}
+.theme-dark button {
+  color: #c1bfbf;
+}
+.theme-dark .todo-check {
+  background: hsl(235deg, 21%, 11%);
+}
+.theme-dark .item {
+  border-bottom: 1px solid white;
+}
+
+.theme-light {
+  background: url("../images/bg-desktop-light.jpg");
+  background-size: 100%;
+  background-color: hsl(0deg, 0%, 98%);
+  background-repeat: no-repeat;
+}
+.theme-light .new-todo, .theme-light .list, .theme-light .options {
+  background: hsl(236deg, 33%, 92%);
+}
+.theme-light button {
+  color: #525252;
+}
+.theme-light input, .theme-light button:hover {
+  color: hsl(235deg, 21%, 11%);
+}
+.theme-light .todo-check {
+  background: hsl(0deg, 0%, 98%);
+}
+.theme-light .item {
+  border-bottom: 1px solid #525252;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  height: 3rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  font-size: 15px;
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  height: 3rem;
+}
+
+input[type=text] {
+  width: 100%;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+}
+
+.todo-check:checked ~ .text {
+  text-decoration: line-through;
+  color: grey;
+}
+
+.todo-check {
+  -webkit-appearance: none;
+  /*hides the default checkbox*/
+  height: 25px;
+  width: 28px;
+  position: relative;
+  transition: 0.1s;
+  border-radius: 50%;
+  background: hsl(235deg, 21%, 11%);
+  text-align: center;
+  font-weight: 600;
+  color: white;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-check:checked {
+  background: linear-gradient(0deg, rgb(192, 88, 243) 14%, rgb(71, 218, 255) 100%);
+}
+
+.todo-check:checked:before {
+  content: "✔";
+}
+
+.todo-check:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.flex-row {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  background: url("../images/bg-desktop-light.jpg");
+  background-size: 100%;
+  background-color: hsl(0deg, 0%, 98%);
+  background-repeat: no-repeat;
+}
+body .new-todo, body .list, body .options {
+  background: hsl(236deg, 33%, 92%);
+}
+body button {
+  color: #525252;
+}
+body input, body button:hover {
+  color: hsl(235deg, 21%, 11%);
+}
+body .todo-check {
+  background: hsl(0deg, 0%, 98%);
+}
+body .item {
+  border-bottom: 1px solid #525252;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 30rem;
+  margin: 3rem auto 0 auto;
+}
+.container .header {
+  width: 100%;
+  justify-content: space-between;
+}
+.container .header #title {
+  font-size: 2.1rem;
+  letter-spacing: 0.5rem;
+  color: white;
+}
+.container .main {
+  width: 100%;
+}
+.container .main div {
+  width: 100%;
+}
+.container .main .new-todo {
+  margin-bottom: 3rem;
+}
+
+.options {
+  display: none;
+  padding-inline: 0.7rem;
+}
+.options #clear {
+  flex-grow: 2;
+  text-align: right;
+}
+.options #count {
+  flex-grow: 2;
+  text-align: left;
+}
+
+.remove {
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+}
+.remove .cross-img {
+  position: relative;
+  top: 5px;
+  right: -7px;
+}
+
+/*# sourceMappingURL=style.css.map */

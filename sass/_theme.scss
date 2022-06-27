@@ -1,0 +1,66 @@
+
+
+.theme-switch #theme {
+    display:none;
+}
+
+.theme-switch #theme + label::before{
+    content: " ";
+    background: url($moon);
+    display: block;
+    width: 25px;
+    height: 26px;
+    cursor: pointer;
+}
+
+.theme-switch #theme:checked + label::before {
+    background: url($sun);
+}
+
+.theme-dark{
+    background: url($bg-dark-img);
+    background-size: 100%;
+    background-color: $dark;
+    background-repeat: no-repeat;
+    .new-todo, .list, .options{
+        background: $dark2;
+    } 
+    input, button:hover{
+        color: $white;
+    }
+    button {
+        color:#c1bfbf;
+    }
+    .todo-check {
+        background: $dark;
+    }
+    .item {
+       border-bottom: 1px solid white;
+    }
+}
+
+@mixin theme-light{
+    background: url($bg-light-img);
+    background-size: 100%;
+    background-color: $light;
+    background-repeat: no-repeat;
+    .new-todo, .list, .options{
+        background: $light2;
+    }
+     button{
+        color: #525252;
+    }
+    input, button:hover {
+        color: $dark;
+    }
+    .todo-check {
+        background: $light;
+    }
+    .item{
+        border-bottom: 1px solid #525252;
+    }
+}
+
+.theme-light {
+    @include theme-light;
+}

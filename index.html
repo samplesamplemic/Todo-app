@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="dummy-todo-app" />
+    <meta name="author" content="Mic" />
+    <link rel="stylesheet" href="./sass/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <script type="text/javascript" src="file2.js" defer></script>
+   
+    <title>Todo</title>
+  </head>
+  
+  <body>
+    <div class="container">
+      <div class="header flex-row">
+        <span id="title">TODO<sub style="font-size:.5rem">byMic</sub></span>
+
+        <div class="theme-switch">
+          <input type="checkbox" id="theme" name="theme" />
+          <label for="theme"></label>
+        </div>
+      </div>
+      <div class="main">
+        <div class="new-todo flex-row">
+          <button id="new-todo">ADD</button>
+          <input
+            type="text"
+            placeholder="Create a new todo"
+            name="add-item"
+            id="add-item"
+          />
+        </div>
+        <div id="drag">
+          <div class="list flex-row">
+          <!-- <div class="item">
+            <label for="" class="flex-row">
+              <input type="checkbox" name="todo-item" class="todo-check" />
+              <input 
+              type="text" 
+              class="text"
+              />
+            </label>
+          </div>
+          <span class="remove"></span> -->
+        </div>
+      </div>
+        <div class="options flex-row">
+          
+            <button id="count"><span></span> items in progress</button>
+
+            <button id="all">All</button>
+          
+            <button id="active">Active</button>
+          
+            <button id="completed">Completed</button>
+          
+            <button id="clear">Clear completed</button>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- link for drag and drop functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+  </body>
+</html>

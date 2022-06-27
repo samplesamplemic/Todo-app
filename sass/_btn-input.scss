@@ -1,0 +1,33 @@
+
+@mixin btn-input {
+    background-color: transparent;
+    border: none;
+}
+
+@mixin font {
+    font-family: $ffam;
+    font-size: $fsize;
+}
+
+button {
+    @include btn-input;
+    cursor: pointer;
+    height: 3rem;
+    @include font;
+    font-size: 15px;
+}
+
+input {
+    @include btn-input;
+    height: 3rem;
+}
+
+input[type="text"] {
+    width: 100%;
+    @include font;
+}
+
+.todo-check:checked ~ .text {
+    text-decoration: line-through;
+    color: grey;
+}
