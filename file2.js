@@ -1,6 +1,5 @@
 const theme = document.getElementById("theme");
 const addItem = document.querySelector("#add-item");
-const appendi = document.querySelector(".list");
 const btnAdd = document.querySelector("#new-todo");
 const option = document.querySelector(".options");
 const itemsTodo = document.querySelectorAll(".count span");
@@ -43,19 +42,24 @@ function addNewItem(text) {
  </div>
  `;
 
-  appendi.after(el); //not work with appendChild why?? rem() break functionality
+  drag.append(el); 
   option.style.display = "flex";
   addItem.value = null;
   addItem.placeholder = "Create a new todo";
   dragdesc.style.display = "block";
   
+  //remove and count todo items
+  const remove = el.querySelector('.remove');
+  remove.addEventListener('click', () => {
+    el.remove()
+    count(-1);
+  });
+
   //callback function
-  rem();
   count(1);
   active();
   completed();
   all();
-  
 }
 
 //add new item on click btn <ADD>
@@ -63,18 +67,7 @@ btnAdd.addEventListener("click", () => {
   addNewItem(addItem.value);
 });
 
-//remove items
-function removeItem(el) {
-  el.remove();
-  count(-1);
-}
 
-//locate target and remove it
-function rem() {
-  document.querySelector(".remove").addEventListener("click", (event) => {
-    removeItem(event.target.closest("div.list"));
-  });
-}
 
 //calculate number of todo-items
 function count(n) {
@@ -83,6 +76,14 @@ function count(n) {
     a.innerHTML = +a.innerHTML + n;  //loop to include the two button 
   })
 };
+
+
+ // remove items
+function removeItem(el) {
+  el.remove();
+  count(-1);
+}
+
 
 //delete checked todo-items
 document.querySelectorAll(".clear").forEach(n =>n.addEventListener("click", () => {  //loop to include the two button 
